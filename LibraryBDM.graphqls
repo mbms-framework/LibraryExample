@@ -1,0 +1,29 @@
+type Book {
+  id: ID!
+  title: String!
+  author: String!
+  publishedDate: String!
+  genre: String
+}
+
+type Author {
+  id: ID!
+  name: String!
+  books: [Book]
+}
+
+type Customer {
+  id: ID!
+  name: String!
+  email: String!
+  borrowedBooks: [Checkout]
+}
+
+type Checkout {
+  id: ID!
+  book: Book!
+  customer: Customer!
+  checkoutDate: String!
+  returnDate: String
+}
+
